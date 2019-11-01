@@ -4,7 +4,7 @@ var PORT = process.env.PORT || 2710;
 
 var app = express();
 
-app.use(express.static("public"));
+app.use(express.static(__dirname + "/public/assets/css"));
 
 app.use(express.urlencoded({
     extended: true
