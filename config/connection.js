@@ -2,6 +2,10 @@ var mysql = require("mysql");
 
 require("dotenv").config();
 
+if (process.env.JAWSDB_URL) {
+    //Heroku deployment
+    connection = mysql.createConnection(process.env.JAWSDB_URL);
+} else {
 var connection = mysql.createConnection({
     host: process.env.HOST,
     port: 3306,
@@ -9,6 +13,7 @@ var connection = mysql.createConnection({
     password: process.env.PASSWORD,
     database: "burgers_db"
 });
+};
 
 connection.connect(function (err) {
     if (err) {
