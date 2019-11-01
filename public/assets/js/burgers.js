@@ -5,14 +5,12 @@ $(function () {
             devoured: 1
         };
 
-        // Send the PUT request.
         $.ajax("/api/burgers/" + id, {
             type: "PUT",
             data: newEat
         }).then(
             function () {
                 console.log("Devored", newEat);
-                // Reload the page to get the updated list
                 location.reload();
             }
         );
