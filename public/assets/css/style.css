@@ -1,8 +1,11 @@
-html, body {
+html,
+body {
     background-image: url("/images/background.png");
+    background-attachment: fixed;
     background-position: center;
     background-size: cover;
     height: 100%;
+
 }
 
 h1 {
@@ -20,4 +23,16 @@ h1 {
 
 #eaten {
     font-family: cursive;
+}
+
+.card {
+    opacity: .95;
+}
+
+.card-body {
+    background: rgb(189, 213, 229);
+}
+
+img {
+    width: 70%;
 }
