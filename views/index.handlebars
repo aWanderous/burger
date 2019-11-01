@@ -1,32 +1,49 @@
-<h1>Eat-Da-Burger!</h1>
+<div class="container">
+  <div class="row">
+    <h1>Eat-Da-Burger!</h1>
 
-<h2>Burgers to eat.</h2>
+    <div class="card-deck">
+      <div class="card">
+        <div class="card-body">
+          <h2 class="card-title" id="add">Add-Da-Burger</h2>
+          <form class="create-form">
 
-<ul>
-  {{#each burgers}}
-    {{#unless devoured}}
-      {{> burgers/burger-made devoured=false}}
-    {{/unless}}
-  {{/each}}
-</ul>
+            <div class="form-group">
+              <label for="bun">Da-Burger's Name:</label>
+              <input type="text" id="bun" name="burger_name">
+            </div>
 
-<h2>Burgers eaten.</h2>
+            <button type="submit" class="btn btn-secondary">Make!</button>
+          </form>
+        </div>
+      </div>
 
-<ul>
-  {{#each burgers}}
-    {{#if devoured}}
-      {{> burgers/burger-eaten  devoured=true}}
-    {{/if}}
-  {{/each}}
-</ul>
+      <div class="card">
+        <div class="card-body">
+          <h2 class="card-title" id="menu">Da-Burgers</h2>
 
-<h2>Add a burger</h2>
-<form class="create-form">
+          <ul class="list-group list-group-flush">
+            {{#each burgers}}
+            {{#unless devoured}}
+            {{> burgers/burger-made devoured=false}}
+            {{/unless}}
+            {{/each}}
+          </ul>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <h2 id="eaten">Da-Burgers Eaten</h2>
 
-  <div class="form-group">
-    <label for="bun">Burger's Name:</label>
-    <input type="text" id="bun" name="burger_name">
+          <ul class="list-group list-group-flush">
+            {{#each burgers}}
+            {{#if devoured}}
+            {{> burgers/burger-eaten  devoured=true}}
+            {{/if}}
+            {{/each}}
+          </ul>
+        </div>
+      </div>
+    </div>
   </div>
-
-  <button type="submit">Make burger</button>
-</form>
+</div>
